@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrera de Robótica - Instituto Perla del Ulúa</title>
+  <link rel="stylesheet" href="robotica.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <div class="logo-container">
+      <img src="logo robotica.png" alt="Logo Robótica Perla del Ulúa" class="logo"> 
+      <h1>Carrera de Robótica</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="nav-link active" onclick="mostrarSeccion('inicio', event)">Inicio</a></li>
+        <li><a href="#" class="nav-link" onclick="mostrarSeccion('mision', event)">Misión</a></li>
+        <li><a href="#" class="nav-link" onclick="mostrarSeccion('Profesores', event)">Profesores</a></li>
+        <li><a href="#" class="nav-link" onclick="mostrarSeccion('laboratorios', event)">Laboratorios</a></li>
+        <li><a href="#" class="nav-link" onclick="mostrarSeccion('contacto', event)">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main>
+    <!-- Inicio -->
+    <section id="inicio" class="seccion-pagina active-section fade-in">
+      <h2>Bienvenidos a Robótica</h2>
+      <p>Innovación, creatividad y tecnología al servicio de la educación.</p>
+
+      <!-- Fotos y video en el inicio -->
+   <div class="galeria">
+  <h3 class="titulo-centro">Momentos Destacados</h3>
+
+  <div class="card" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="campion.jpg" alt="Equipo ganador de robótica">
+      </div>
+      <div class="card-back">
+        <p>Equipo ganador de robótica en competencia nacional</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="fito.jpg" alt="Competencia Robo Mission">
+      </div>
+      <div class="card-back">
+        <p>Estudiantes participando en la competencia Robo Mission</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="taller.jpg" alt="Laboratorio de robótica">
+      </div>
+      <div class="card-back">
+        <p>Sesión práctica en el laboratorio de robótica</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+      <div class="video-container">
+        <h3>Video del Proyecto</h3>
+        <video controls width="300">
+          <source src="grabacion.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video.
+        </video>
+      </div>
+    </section>
+
+    <!-- Misión -->
+    <section id="mision" class="seccion-pagina fade-in">
+      <h2>Nuestra Misión</h2>
+      <p>
+        Formar estudiantes capaces de diseñar, construir y programar sistemas robóticos,
+        fomentando el pensamiento crítico, la innovación y el trabajo en equipo.
+      </p>
+    </section>
+
+    <!-- Profesores -->
+    <section id="Profesores" class="seccion-pagina fade-in">
+  <h2>Profesores Destacados</h2>
+  <div class="galeria">
+    <div class="profesor">
+      <img src="imagen 12.jpeg" alt="Rigoberto Pinel">
+      <h3>Profe. Rigoberto Pinel</h3>
+      <p>Encargado de los laboratorios</p>
+    </div>
+    <div class="profesor">
+      <img src="imagen 6.jpeg" alt="Rosa Ayslin Calix">
+      <h3>Profe. Rosa Ayslin Calix</h3>
+      <p>Robótica y Programación</p>
+    </div>
+    <div class="profesor">
+      <img src="imagen 7.jpeg" alt="Elvin Mendoza">
+      <h3>Profe. Elvin Mendoza</h3>
+      <p>Encargado del Lab4</p>
+    </div>
+    <div class="profesor">
+      <img src="imagen 5.jpeg" alt="Moran Matadoro">
+      <h3>Profe. Moran Matadoro</h3>
+      <p>Robótica e Informática</p>
+    </div>
+  </div>
+</section>
+
+    <!-- Laboratorios -->
+    <section id="laboratorios" class="seccion-pagina fade-in">
+      <h2>Laboratorios</h2>
+      <p>Contamos con espacios equipados con kits de robótica, impresoras 3D y software especializado.</p>
+      <div class="galeria">
+        <img src="lab1.png" alt="Estudiantes trabajando en proyectos">
+        <img src="lab2.png" alt="laboratorios">
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="seccion-pagina fade-in">
+      <h2>Contacto</h2>
+      <p><strong>Dirección:</strong> El Progreso, Yoro, Honduras</p>
+      <p><strong>Correo:</strong> levipinel@perladelulua.edu.hn</p>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2026 Carrera de Robótica - Instituto Perla del Ulúa</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function mostrarSeccion(idSeccion, event) {
+      if (event) event.preventDefault();
+      document.querySelectorAll('.seccion-pagina').forEach(sec => sec.classList.remove('active-section'));
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+      const seccionSeleccionada = document.getElementById(idSeccion);
+      if (seccionSeleccionada) seccionSeleccionada.classList.add('active-section');
+      if (event && event.currentTarget) event.currentTarget.classList.add('active');
+    }
+   function mostrarDescripcion(texto) {
+  document.getElementById('texto-descripcion').textContent = texto;
+  document.getElementById('modal').style.display = 'block';
+}
+
+function cerrarModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+
+
+  </script>
+
+</body>
+</html>
